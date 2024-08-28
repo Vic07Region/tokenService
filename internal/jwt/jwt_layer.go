@@ -64,26 +64,3 @@ func (t *JwtToken) ParseToken(tokenString string) (*Claims, error) {
 	return token.Claims.(*Claims), nil
 
 }
-
-//
-//type Tokens struct {
-//	Access  string
-//	Refresh string
-//}
-
-//func (t *JwtToken) GetTokens(guid string, expiration_access, expiration_refresh time.Duration) (*Tokens, error) {
-//	params := TokenParams{
-//		GUID:       guid,
-//		TokenType:  "Refresh",
-//		TokenID:    "",
-//		Expiration: expiration_refresh,
-//	}
-//
-//	refresh_token, err := t.generateToken(params)
-//	if err != nil {
-//		return nil, fmt.Errorf("Refresh generate Error: %s", err)
-//	}
-//	//rbc := bcrypt.GenerateFromPassword([]byte(refresh_token), bcrypt.DefaultCost)
-//	//access_token, err := t.generateToken()
-//	//crypto.bcrypt.
-//}
