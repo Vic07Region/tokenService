@@ -1,0 +1,17 @@
+version: "2"
+
+sql:
+  - engine: "postgresql"
+    schema: "internal/database/schemas/001_migration.sql"
+    queries: "internal/database/sqlc_queries/"
+    database:
+      uri: "postgresql://postgres:12345678@localhost:5432/tknserv?sslmode=disable"
+    gen:
+      go:
+        out: "internal/database/queries"
+        sql_package: "pgx"
+        emit_json_tags: true
+        emit_prepared_queries: false
+        emit_interface: false
+        emit_exact_table_names: false
+        emit_empty_slices: false
